@@ -21,15 +21,18 @@ class AnalysisController extends Controller
 
         // dd($period);
 
-        $subQuery = Order::betweenDate($startDate, $endDate)
-        ->where('status', true)
-        ->groupBy('id')
-        ->selectRaw('id, sum(subtotal) as totalPerPurchase, customer_name, status, DATE_FORMAT(created_at, "%Y%m%d") as date');
+        // $subQuery = Order::betweenDate($startDate, $endDate)
+        // ->where('status', true)
+        // ->groupBy('id')
+        // ->selectRaw('id, sum(subtotal) as totalPerPurchase, customer_name, status, DATE_FORMAT(created_at, "%Y%m%d") as date');
 
-        $data = DB::table($subQuery)
-        ->groupBy('date')
-        ->selectRaw('date, sum(totalPerPurchase) as total')
-        ->get();
+        // $data = DB::table($subQuery)
+        // ->groupBy('date')
+        // ->selectRaw('date, sum(totalPerPurchase) as total')
+        // ->get();
+
+        // dd($data);
+
 
         // dd($data);
 
